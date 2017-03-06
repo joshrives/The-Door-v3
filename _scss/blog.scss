@@ -1,0 +1,70 @@
+.blog-main {
+    margin: 4em 0;
+    @include bp(50) {
+        float: right;
+        width: 75%;
+    }
+    .entry-title {
+        font-size: 2.5em;
+        line-height: 1;
+        margin: 0 0 0.25em;
+        a {
+            text-decoration: none;
+            color: $text;
+            &:hover {
+                color: $text;
+                text-decoration: underline;
+            }
+        }
+    }
+    .post {
+        padding: 0 0 3em;
+        border-bottom: 1px solid $gray;
+        margin: 0 0 3em;
+    }
+}
+.blog-sidebar {
+    margin: 4em 0 0;
+    @include bp(50) {
+        float: left;
+        width: 25%;
+        padding-right: 3em;
+    }
+    ul {
+        list-style: none;
+        margin: 0 0 2em;
+        padding: 0;
+        a {
+            text-transform: uppercase;
+            font-size: 0.875em;
+        }
+    }
+    .widget-title {
+        margin: 0 0 0.25em;
+    }
+}
+.nav-links {
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.nav-previous {
+    float: left;
+    a {
+        &:before {
+            content: '\00ab';
+        }
+    }
+}
+.nav-next {
+    float: right;
+    text-align: right;
+    a {
+        &:after {
+            content: '\00BB';
+        }
+    }
+}

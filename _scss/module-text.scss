@@ -1,0 +1,19 @@
+.module-text {
+    margin: 2em 0;
+}
+
+.text-content {
+    padding: 0 2em;
+    font-size: 0.875em;
+    @include bp(44) {
+        font-size: 0.8125em;
+    }
+    @include bp(50) {
+        font-size: 1em;
+    }
+    p {
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+}

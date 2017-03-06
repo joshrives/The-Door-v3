@@ -1,0 +1,26 @@
+.message-archive,
+.message-list {
+    border-bottom: 1px solid $gray;
+    h2 {
+        font-size: 2em;
+        margin: 0;
+    }
+    .powerpress_links {
+        margin-top: 1rem;
+        font-size: 0;
+        a {
+            font-size: 0.875rem;
+            &:first-of-type {
+                @include button($teal, #fff, $teal);
+                margin-right: 1em;
+            }
+            &:last-of-type {
+                @include button(#fff, $teal, $teal);
+            }
+        }
+    }
+}
+.message-meta {
+    color: $subheading;
+    font-size: 0.875em;
+}

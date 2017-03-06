@@ -1,0 +1,26 @@
+.threes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        display: block;
+        padding: 3em 1em;
+        border-bottom: 1px solid $gray;
+        text-align: center;
+        &:last-of-type {
+            border: 0;
+        }
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        @include bp(50) {
+            border: 0;
+            padding: 3em;
+            float: left;
+            width: 33.333333%;
+            border-right: 1px solid $gray;
+        }
+    }
+}

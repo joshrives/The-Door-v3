@@ -1,0 +1,176 @@
+.header-container {
+    .wrap {
+        position: relative;
+    }
+}
+.site-branding {
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    font-size: 0.875em;
+    h1 {
+        margin: 0;
+    }
+    a {
+        display: block;
+        width: 1.75em;
+        height: 2.275em;
+        background: url(_i/logo-dark.png) top left no-repeat;
+        background-size: 1.75em;
+        text-indent: -9999px;
+        @include bp(50) {
+            width: 2.5em;
+            height: 3.25em;
+            background-size: 2.5em;
+        }
+    }
+}
+.menu-toggle {
+    position: absolute;
+    right: 0;
+    top: 0.25em;
+    @include button(transparent, #fff, #fff);
+    padding: 0.25em 1em;
+    font-size: 0.8125em;
+	&:hover {
+		background: #fff;
+		color: $black;
+		border-color: #fff;
+	}
+    @include bp(50) {
+        display: none;
+    }
+}
+.menu-top-navigation-container {
+    display: none;
+    @include bp(50) {
+        display: block;
+    }
+}
+.main-navigation {
+    text-align: center;
+    .menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        > li {
+            position: relative;
+            a {
+                display: block;
+                padding: 1em 0.75em;
+                @include heading;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 1.25em;
+            }
+            @include bp(50) {
+                display: inline-block;
+                &:last-of-type {
+                    position: absolute;
+                    right: 0;
+                    a {
+                        @include button($black, #fff, $black);
+                    }
+                }
+                a {
+                    display: inline-block;
+                    font-size: 0.875em;
+                    color: $black;
+                }
+            }
+        }
+    }
+    .sub-menu {
+        display: none;
+        position: absolute;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        left: 50%;
+        margin-left: -5em;
+        a {
+            display: block;
+            background: rgba(0,0,0,0.75);
+            width: 10em;
+        }
+    }
+}
+.site-header {
+    position: absolute;
+    top: 1em;
+    left: 0;
+    right: 0;
+    &.with-image {
+        .site-branding {
+            a {
+                background: url(_i/logo-white.png) top left no-repeat;
+                background-size: 1.75em;
+            }
+        }
+        .main-navigation {
+            .menu {
+                > li {
+                    a {
+                        color: #fff;
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                    &:last-of-type {
+                        a {
+                            @include button(#fff, $black, #fff);
+                            display: block;
+                            @include bp(50) {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.dark,
+.dark-box {
+    .site-header {
+        .site-branding {
+            a {
+                background: url(_i/logo-dark.png) top left no-repeat;
+                background-size: 1.75em;
+            }
+        }
+        .main-navigation {
+            ul {
+                li {
+                    a {
+                        color: $black;
+                    }
+                    &:last-of-type {
+                        a {
+                            @include button($black, #fff, $black);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.show-nav {
+    .site-branding {
+        z-index: 901;
+    }
+    .menu-top-navigation-container {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.9);
+        z-index: 900;
+        padding: 3em 1em;
+    }
+    .menu-toggle {
+        z-index: 901;
+    }
+}

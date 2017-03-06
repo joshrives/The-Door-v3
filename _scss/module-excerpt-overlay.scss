@@ -1,0 +1,90 @@
+.module-excerpt-overlay {
+    position: relative;
+    &:after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 40%;
+        z-index: 2;
+        background-image: linear-gradient(to right, rgba(0,0,0,0.8),transparent);
+        @include bp(50) {
+            display: block;
+        }
+    }
+    &.right {
+        .excerpt-overlay {
+            @include bp(50) {
+                right: 0;
+                left: 50%;
+            }
+        }
+        &:after {
+            left: 40%;
+            right: 0;
+            background-image: linear-gradient(to left, rgba(0,0,0,0.8),transparent);
+        }
+    }
+
+    img {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.excerpt-overlay {
+    text-align: center;
+    padding: 0 1em 2em;
+    header {
+        position: absolute;
+        top: 3em;
+        left: 1em;
+        right: 1em;
+        z-index: 5;
+        background: rgba(0,0,0,0.5);
+        padding: 1em 0.5em;
+        color: #fff;
+    }
+    @include bp(50) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        right: 50%;
+        z-index: 3;
+        padding: 2em;
+        color: #fff;
+        header {
+            position: static;
+            transform: none;
+            background: none;
+            padding: 0;
+        }
+    }
+    h3 {
+        font-size: 2.5em;
+        margin: 0 0 0.25em;
+    }
+    h4 {
+        font-family: 'Libre Baskerville', serif;
+        font-weight: normal;
+        margin: 0;
+    }
+    header {
+        margin: 0 0 2em;
+    }
+    p {
+        margin: 1em 0 3em;
+    }
+    .clear-btn {
+        border-color: $black;
+        color: $black;
+        @include bp(50) {
+            border-color: #fff;
+            color: #fff;
+        }
+    }
+}

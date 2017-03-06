@@ -1,0 +1,59 @@
+.module-boxes {
+    padding: 3em 0;
+    h2 {
+        text-align: center;
+        border-bottom: 1px solid $black;
+        margin: 0;
+        span {
+            display: inline-block;
+            padding: 0.5em 1.5em;
+            border: 1px solid $black;
+            border-bottom: 0;
+        }
+    }
+}
+.box-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        display: block;
+        border-bottom: 1px solid $black;
+        position: relative;
+        @include bp(44) {
+            float: left;
+            width: 50%;
+            &:nth-child(odd){
+                border-right: 1px solid $black;
+            }
+        }
+        @include bp(62.5) {
+            min-height: 30em;
+            &:nth-child(even) {
+                .box-wrap {
+                    right: auto;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+.box-wrap {
+    padding: 3em;
+    @include bp(44) {
+        padding: 2em;
+    }
+    @include bp(50) {
+        padding: 3em;
+    }
+    @include bp(62.5) {
+        padding: 4em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 40em;
+    }
+    h3 {
+        font-size: 2em;
+    }
+}

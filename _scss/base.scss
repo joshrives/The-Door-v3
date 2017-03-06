@@ -1,0 +1,100 @@
+/*!
+	Theme Name: The Door v3
+	Theme URI: http://thedoorchurch.net
+	Author: Josh Rives
+	Author URI: http://cmdtab.co
+*/
+@import "normalize";
+@import "bits";
+@import "var";
+
+html,body {
+	overflow-x:hidden;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	color: $text;
+	background: $back;
+	margin: 0;
+	box-shadow: 0 0.25em 1.5em 0.5em rgba(0,0,0,0.2);
+	font:
+		400 0.8125em/1.8
+		'Libre Baskerville', Georgia, serif;
+	@include bp(62.5) {
+		font-size: 0.9375em;
+	}
+	@include bp(80) {
+		font-size: 1em;
+	}
+	@include bp(100) {
+		font-size: 1.2em;
+	}
+}
+
+a {
+	color: $teal;
+	&:hover {
+		color: darken($teal, 10%);
+	}
+}
+p {
+	line-height: 1.8;
+	@include bp(50) {
+		line-height: 2.5;
+	}
+}
+.btn {
+	@include button($teal, #fff, $teal);
+}
+.clear-btn {
+	@include button(transparent, #fff, #fff);
+	&:hover {
+		background: #fff;
+		color: $black;
+		border-color: #fff;
+	}
+}
+.white-btn {
+	@include button(transparent, $black, $black);
+	&:hover {
+		background: $black;
+		color: #fff;
+		border-color: $black;
+	}
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 0;
+	@include heading();
+}
+h1,h2,h3 {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+@import "modules";
+@import "header";
+@import "home";
+@import "page-banners";
+@import "module-callout";
+@import "module-centered-text";
+@import "module-excerpt-overlay";
+@import "module-boxes";
+@import "module-background-centered";
+@import "module-text";
+@import "module-three-list";
+@import "module-video";
+@import "module-title";
+@import "footer";
+@import "slider";
+@import "page";
+@import "events";
+@import "sermons";
+@import "blog";

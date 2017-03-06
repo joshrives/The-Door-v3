@@ -1,0 +1,56 @@
+.site-footer {
+    padding: 4em 0;
+    background: $black;
+    .wrap {
+        position: relative;
+    }
+}
+.tdc-copyright {
+    position: absolute;
+    left: -12em;
+    top: 7em;
+    width: 15em;
+    transform: rotate(90deg);
+    @include heading();
+    color: $gray;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.footer-links {
+    > li {
+        > a {
+            display: block;
+            @include body();
+            color: $teal;
+            text-transform: none;
+            letter-spacing: normal;
+            margin: 0 0 1.25em;
+            text-decoration: none;
+            font-size: 1.15em;
+            font-style: italic;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: block;
+            margin: 0 0 0.5em;
+        }
+        a {
+            color: $black;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            @include heading();
+            letter-spacing: 0.1em;
+            &:hover {
+                color: $teal;
+            }
+        }
+    }
+}

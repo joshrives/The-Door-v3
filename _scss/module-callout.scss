@@ -1,0 +1,91 @@
+.callout {
+    margin: 0.5em;
+    padding: 0.75em 1.5em;
+    box-shadow:	2px 2px 4px rgba(0,0,0,0.3);
+    background: $teal;
+    color: #fff;
+    text-align: center;
+    @include heading();
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    a {
+        color: #fff;
+        text-decoration: none;
+        svg {
+            vertical-align: middle;
+            margin: -0.25em 0 0 0.5em;
+            fill: #fff;
+        }
+        &:hover {
+            color: darken(#fff, 10%);
+            svg {
+                fill: darken(#fff, 10%);
+            }
+        }
+
+    }
+    &.black {
+        background: $black;
+        a {
+            svg {
+                fill: $teal;
+            }
+            &:hover {
+                svg {
+                    fill: darken(#fff, 10%);
+                }
+            }
+        }
+    }
+    &.main-callout {
+        background: $black;
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+            @include heading();
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8125em;
+            margin-right: 2em;
+            strong {
+                color: $teal;
+                margin-right: 0.5em;
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+.service-details {
+    margin: 0 0 0.5em;
+    @include bp(50) {
+        float: left;
+        margin: 0;
+    }
+
+}
+.callout-social {
+    * {
+        line-height: 1;
+    }
+    li {
+        vertical-align: middle;
+    }
+    a {
+        text-decoration: none;
+        display: inline-block;
+        width: 1.5em;
+    }
+    @include bp(50) {
+        float: right;
+    }
+}

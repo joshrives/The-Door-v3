@@ -1,0 +1,14 @@
+$text: #333;
+$back: #efefef;
+$black: #20191b;
+$teal: #59a9aa;
+$gray: #b7b7b7;
+$subheading: #a9a6a8;
+
+@mixin heading() {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+}
+@mixin body() {
+    font-family: 'Libre Baskerville', serif;
+}
