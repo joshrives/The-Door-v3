@@ -14,37 +14,43 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<?php get_template_part( 'template-parts/content', 'header' ); ?>
-		<div class="wrap group">
-		<?php if ( have_posts() ) :?>
-			<div class="blog-main">
+    <div id="primary" class="content-area">
+        <?php get_template_part( 'template-parts/content', 'header' ); ?>
+		<div class="post-navigation">
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				// the query
+				$wp_query = new WP_Query(array(
+					'post_type'=>'post',
+					'post_status'=>'publish',
+					'posts_per_page'=>-1));
+				?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				<?php if ( $wp_query->have_posts() ) : ?>
 
-			endwhile;
+				<ul class="blog-list group">
+					<!-- the loop -->
+					<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+						<li>
+							<a href="<?php the_permalink(); ?>" class="group">
+								<?php the_post_thumbnail(); ?>
+								<div>
+									<h4><?php the_title(); ?></h4>
+									<?php the_excerpt(); ?>
+									<span>Read More</span>
+								</div>
+							</a>
+						</li>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+				</ul>
 
-			the_posts_navigation();
+					<?php wp_reset_postdata(); ?>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-			</div>
-			<div class="blog-sidebar">
-				<?php get_sidebar(); ?>
-			</div>
+				<?php else : ?>
+					<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+				<?php endif; ?>
 		</div>
-	</div><!-- #primary -->
+    </div><!-- #primary -->
 
 <?php
 

@@ -65,8 +65,11 @@
         }
     }
     h3 {
-        font-size: 2.5em;
+        font-size: 1.75em;
         margin: 0 0 0.25em;
+		@include bp(44) {
+			font-size: 2em;
+		}
     }
     h4 {
         font-family: 'Libre Baskerville', serif;
@@ -78,13 +81,42 @@
     }
     p {
         margin: 1em 0 3em;
+		display: none;
+		@include bp(30) {
+			display: block;
+		}
     }
-    .clear-btn {
-        border-color: $black;
-        color: $black;
-        @include bp(50) {
-            border-color: #fff;
+    .btn {
+		font-size: 1.25em;
+        &.black {
+			border-color: $black;
+	        color: #fff;
+			background-color: $black;
+	        &:hover {
+				background-color: #fff;
+				color: $black;
+				border-color: #fff;
+			}
+		}
+		&.white {
+			border-color: #fff;
+			background-color: #fff;
+            color: $black;
+			&:hover {
+				background-color: $black;
+				color: #fff;
+				border-color: $black;
+			}
+		}
+		&.clear {
+			border-color: #fff;
+			background-color: transparent;
             color: #fff;
-        }
+			&:hover {
+				background-color: #fff;
+				color: $black;
+				border-color: #fff;
+			}
+		}
     }
 }

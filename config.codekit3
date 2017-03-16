@@ -7,7 +7,7 @@
 		"uuidString": "42990D82-A2F7-445E-ADD9-BFC0FC5CF5B4"
 		}
 	],
-"creatorBuild": "25568",
+"creatorBuild": "25504",
 "files": {
 	"\/.jscsrc": {
 		"ft": 8192,
@@ -34,6 +34,22 @@
 		"oAP": "\/_i\/bx_loader.gif",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/_i\/chevron-down-white.png": {
+		"ft": 32768,
+		"iS": 29117,
+		"oA": 0,
+		"oAP": "\/_i\/chevron-down-white.png",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/_i\/chevron-down.png": {
+		"ft": 32768,
+		"iS": 29117,
+		"oA": 0,
+		"oAP": "\/_i\/chevron-down.png",
+		"oF": 0,
+		"opt": 1
 		},
 	"\/_i\/controls.png": {
 		"ft": 32768,
@@ -318,6 +334,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_scss\/modal.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/css\/modal.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_scss\/module-background-centered.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -526,6 +555,18 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_svg\/icon-chevron-right.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_svg\/icon-chevron-right.php",
+		"oF": 0
+		},
+	"\/_svg\/icon-play.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_svg\/icon-play.php",
+		"oF": 0
+		},
 	"\/archive-event.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -568,6 +609,12 @@
 		"oAP": "\/functions.php",
 		"oF": 0
 		},
+	"\/header-blog.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/header-blog.php",
+		"oF": 0
+		},
 	"\/header.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -606,7 +653,7 @@
 		},
 	"\/index.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/index.php",
 		"oF": 0
 		},
@@ -755,7 +802,7 @@
 		},
 	"\/single.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/single.php",
 		"oF": 0
 		},
@@ -787,6 +834,18 @@
 		"oAP": "\/taxonomy-sermon-type.php",
 		"oF": 0
 		},
+	"\/template-parts\/content-blog-full.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/template-parts\/content-blog-full.php",
+		"oF": 0
+		},
+	"\/template-parts\/content-blog-single.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/template-parts\/content-blog-single.php",
+		"oF": 0
+		},
 	"\/template-parts\/content-callout.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -803,6 +862,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/template-parts\/content-header.php",
+		"oF": 0
+		},
+	"\/template-parts\/content-hero-image.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/template-parts\/content-hero-image.php",
 		"oF": 0
 		},
 	"\/template-parts\/content-none.php": {
@@ -850,7 +915,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 501623415,
-	"displayValue": "the-door-v3",
+	"displayValue": "The-Door-v3",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_magenta"
 	},
@@ -1724,10 +1789,6 @@
 			"active": 0,
 			"optionString": ""
 			},
-		"no-multi-assign": {
-			"active": 0,
-			"optionString": ""
-			},
 		"no-multi-spaces": {
 			"active": 0,
 			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
@@ -2056,10 +2117,6 @@
 			"active": 0,
 			"optionString": ""
 			},
-		"prefer-promise-reject-errors": {
-			"active": 0,
-			"optionString": "{'allowEmptyReject': false}"
-			},
 		"prefer-rest-params": {
 			"active": 0,
 			"optionString": ""
@@ -2153,10 +2210,6 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
-			"active": 0,
-			"optionString": "'never'"
-			},
-		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},

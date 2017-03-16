@@ -39,23 +39,38 @@
 <div id="page" class="site<?php if( empty($GLOBALS['image']) ): ?> no-banner<?php endif; ?> <?php echo $GLOBALS['banner_type']; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-door-v3' ); ?></a>
 	<div class="header-container">
-		<div class="wrap">
-			<header id="masthead" class="site-header<?php if(!empty($GLOBALS['image'])){echo ' with-image';} ?>" role="banner">
-				<div class="site-branding">
-					<?php
-					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-					<?php endif; ?>
-				</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'the-door-v3' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
-			</header><!-- #masthead -->
-		</div><!--group-->
+		<?php
+		if ( is_front_page() ) {
+			get_template_part( 'template-parts/content', 'hero-image' );
+		} ?>
+
+			<div class="wrap">
+				<header id="masthead" class="site-header<?php if(!empty($GLOBALS['image'])){echo ' with-image';} ?>" role="banner">
+					<div class="site-branding">
+						<?php
+						if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+						<?php endif; ?>
+					</div><!-- .site-branding -->
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'the-door-v3' ); ?></button>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					</nav><!-- #site-navigation -->
+				</header><!-- #masthead -->
+			</div><!--group-->
+
+		<?php
+		if ( is_front_page() ) { ?>
+			</div>
+		<?php } ?>
+
 	</div><!--header-container-->
-
-	<div id="content" class="site-content">
+	<?php if ( is_front_page() ) { ?>
+		<div id="content" class="site-content home-page-content">
+	<?php } else { ?>
+		<div id="content" class="site-content">
+	<?php } ?>

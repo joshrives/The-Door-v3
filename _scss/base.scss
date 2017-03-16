@@ -43,8 +43,10 @@ p {
 		line-height: 2.5;
 	}
 }
-.btn {
+.btn,
+.gform_button {
 	@include button($teal, #fff, $teal);
+	letter-spacing: 0.15em;
 }
 .clear-btn {
 	@include button(transparent, #fff, #fff);
@@ -63,20 +65,42 @@ p {
 	}
 }
 
+
 h1,h2,h3,h4,h5,h6 {
 	margin-top: 0;
 	@include heading();
 }
 h1,h2,h3 {
 	text-transform: uppercase;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.15em;
 }
-
+h1,h2 {
+	font-family: 'Oswald', sans-serif;
+}
+h1 {
+	font-size: 2.25em;
+	@include bp(50) {
+		font-size: 2.75em;
+	}
+}
+h2 {
+	font-size: 1.875em;
+	@include bp(50) {
+		font-size: 2.25em;
+	}
+}
+h3 {
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-style: italic;
+}
 .icon {
 	display: inline-block;
 	width: 1em;
 	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
 	fill: currentColor;
+	vertical-align: middle;
 }
 
 @import "modules";
@@ -98,3 +122,4 @@ h1,h2,h3 {
 @import "events";
 @import "sermons";
 @import "blog";
+@import "modal";

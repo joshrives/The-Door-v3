@@ -76,20 +76,21 @@ img {
 	text-align: center;
 	font-family: 'Oswald', sans-serif;
     font-weight: 300;
-	background: $back-color;
+	background-color: $back-color;
 	color: $text-color;
 	border: 1px solid $border-color;
 	text-decoration: none;
 	letter-spacing: 1px;
+	transition: all 250ms ease-in-out;
 	&:focus {
 		outline: none;
 		color: $text-color;
-		background: darken($back-color, 5%);
+		background-color: darken($back-color, 5%);
 		border-color: darken($border-color, 5%);
 	}
 	&:hover {
 		color: $text-color;
-		background: darken($back-color, 10%);
+		background-color: darken($back-color, 10%);
 		border-color: darken($border-color, 10%);
 	}
 }

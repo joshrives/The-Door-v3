@@ -61,6 +61,7 @@ get_header(); ?>
 				<div class="excerpt-overlay">
 					<header>
 						<?php the_sub_field('content_header'); ?>
+						<a href="<?php the_sub_field('btn_url'); ?>" class="btn <?php the_sub_field('btn_color'); ?>"><?php the_sub_field('btn_text'); ?></a>
 					</header>
 					<?php the_sub_field('half_content'); ?>
 				</div>

@@ -1,4 +1,6 @@
 .header-container {
+	position: relative;
+	z-index: 2;
     .wrap {
         position: relative;
     }
@@ -19,8 +21,8 @@
         background-size: 1.75em;
         text-indent: -9999px;
         @include bp(50) {
-            width: 2.5em;
-            height: 3.25em;
+            width: 4em;
+            height: 4em;
             background-size: 2.5em;
         }
     }
@@ -31,7 +33,7 @@
     top: 0.25em;
     @include button(transparent, #fff, #fff);
     padding: 0.25em 1em;
-    font-size: 0.8125em;
+    font-size: 1.1em;
 	&:hover {
 		background: #fff;
 		color: $black;
@@ -51,8 +53,13 @@
     text-align: center;
     .menu {
         list-style: none;
-        margin: 0;
+        margin: 5em 0 0 0;
         padding: 0;
+		border-top: 1px solid #fff;
+		@include bp(50) {
+			border-top: none;
+			margin: 0;
+		}
         > li {
             position: relative;
             a {
@@ -74,37 +81,48 @@
                 }
                 a {
                     display: inline-block;
-                    font-size: 0.875em;
+                    font-size: 1em;
                     color: $black;
                 }
             }
         }
     }
     .sub-menu {
-        display: none;
-        position: absolute;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        left: 50%;
-        margin-left: -5em;
+		position: relative;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		display: none;
+		background-color: #fff;
+		@include bp(50) {
+			position: absolute;
+			text-align: center;
+			left: 0.65em;
+			background-color: transparent
+		}
         a {
             display: block;
-            background: rgba(0,0,0,0.75);
-            width: 10em;
+			text-align: center;
+			@include bp(50) {
+				width: 12em;
+			}
         }
+		li {
+			background: rgba(0,0,0,0.85);
+		}
     }
 }
 .site-header {
     position: absolute;
-    top: 1em;
+    top: 2em;
     left: 0;
     right: 0;
     &.with-image {
         .site-branding {
             a {
                 background: url(_i/logo-white.png) top left no-repeat;
-                background-size: 1.75em;
+                background-size: 3em;
             }
         }
         .main-navigation {
@@ -112,20 +130,64 @@
                 > li {
                     a {
                         color: #fff;
+						transition: all 250ms ease-in-out;
                         &:hover {
                             opacity: 0.7;
                         }
                     }
                     &:last-of-type {
                         a {
-                            @include button(#fff, $black, #fff);
+                            @include button(transparent, #fff, #fff);
                             display: block;
+							&:hover {
+								background-color: #fff;
+								color: $black;
+								border-color: #fff;
+								opacity: 1;
+							}
                             @include bp(50) {
                                 display: inline-block;
                             }
                         }
                     }
                 }
+				li.menu-item-has-children {
+					position: relative;
+					padding-right: 0.5em;
+					> a {
+						&:before {
+							content: '';
+							background-image: url(_i/chevron-down-white.png);
+							background-repeat: no-repeat;
+							background-size: 0.35em;
+							width: 0.35em;
+							height: 0.35em;
+							position: absolute;
+							top: 1.8em;
+							right: 0.5em;
+						}
+						&.transform {
+							&:before {
+								transform: scale(-1, -1);
+							}
+						}
+					}
+					&:hover .sub-menu {
+						@include bp(50) {
+							display: block;
+						}
+					}
+					.sub-menu {
+						a {
+							padding: 1em;
+							&:hover {
+								opacity: 1;
+								color: $black;
+								background-color: #fff;
+							}
+						}
+					}
+				}
             }
         }
     }

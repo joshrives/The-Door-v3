@@ -1,7 +1,13 @@
 .module-centered-text {
-    padding: 3em 0;
+    padding: 6em 0;
     text-align: center;
     p {
         margin: 1em 0 3em;
+		&:last-of-type {
+			 margin-bottom: 0;
+		}
     }
+	a {
+		margin-bottom: 3em;
+	}
 }

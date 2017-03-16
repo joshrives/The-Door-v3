@@ -1,4 +1,5 @@
 .page-header {
+	position: relative;
     img {
         display: block;
     }
@@ -36,12 +37,13 @@
         padding-bottom: 8%;
     }
 }
-.header-content {
+.header-content,
+.hero-content {
     text-align: center;
     width: 80%;
     max-width: 45em;
     position: absolute;
-    top: 3em;
+    top: 25%;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -50,6 +52,9 @@
         font-style: italic;
         margin: 0 0 1em;
     }
+	a {
+		font-style: normal;
+	}
     h1 {
         margin: 0;
     }
@@ -60,7 +65,7 @@
         letter-spacing: 0.1em;
     }
     @include bp(44) {
-        top: 30%;
+        top: 50%;
         left: 50%;
         right: auto;
         transform: translate(-50%, -50%);
@@ -69,10 +74,52 @@
             font-size: 3em;
         }
     }
-    @include bp(50) {
-        top: 40%;
+    @include bp(62.5) {
         h2 {
             font-size: 3.5em;
         }
     }
+}
+.hero-image {
+	background-image: url('http://placehold.it/2560x800');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	background-position: 50% 50%;
+	&.white {
+		.site-header {
+			a {
+				color: #fff;
+			}
+		}
+		.site-branding {
+			a {
+				background: url(_i/logo-white.png) top left no-repeat;
+				background-size: 2.5em;
+				height: 3em;
+				width: 3em;
+			}
+		}
+		.menu {
+			> li:last-child {
+				a {
+					@include button(#fff, $black, #fff);
+					margin-top: 0.35em;
+					&:hover {
+						background: $black;
+						color: #fff;
+						border-color: $black;
+					}
+				}
+			}
+		}
+	}
+}
+.hero-content {
+	top: 50%;
+}
+.home-page-content {
+	.page-header {
+		display: none;
+	}
 }
