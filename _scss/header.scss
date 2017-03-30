@@ -122,7 +122,10 @@
         .site-branding {
             a {
                 background: url(_i/logo-white.png) top left no-repeat;
-                background-size: 3em;
+                background-size: 1.75em;
+				@include bp(50) {
+					background-size: 2.5em;
+				}
             }
         }
         .main-navigation {
@@ -199,6 +202,9 @@
             a {
                 background: url(_i/logo-dark.png) top left no-repeat;
                 background-size: 1.75em;
+				@include bp(50) {
+					background-size: 2.5em;
+				}
             }
         }
         .main-navigation {

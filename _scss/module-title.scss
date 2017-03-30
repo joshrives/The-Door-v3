@@ -2,6 +2,9 @@
     text-align: center;
     position: relative;
     z-index: 100;
+    span {
+        display: inline-block;
+    }
     &.dark {
         span {
             background: $text;

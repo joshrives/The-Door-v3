@@ -35,19 +35,27 @@
 				echo ' - ';
 				echo eo_get_the_end('g:ia');
 			} elseif (eo_get_the_start('F jS, Y') !== eo_get_the_end('F jS, Y')) {
-				echo eo_get_the_start('F jS, Y');
-				echo ' at ';
-				echo eo_get_the_start('g:ia');
-				echo ' to ';
-				echo eo_get_the_end('F jS, Y');
-				echo ' at ';
-				echo eo_get_the_end('g:ia');
+				if(eo_is_all_day) {
+					echo eo_get_the_start('F jS, Y');
+				} else {
+					echo eo_get_the_start('F jS, Y');
+					echo ' at ';
+					echo eo_get_the_start('g:ia');
+					echo ' to ';
+					echo eo_get_the_end('F jS, Y');
+					echo ' at ';
+					echo eo_get_the_end('g:ia');
+				}
 			} else {
-				echo eo_get_the_start('F jS, Y');
-				echo ' from ';
-				echo eo_get_the_start('g:ia');
-				echo ' - ';
-				echo eo_get_the_end('g:ia');
+				if(eo_is_all_day) {
+					echo eo_get_the_start('F jS, Y');
+				} else {
+					echo eo_get_the_start('F jS, Y');
+					echo ' from ';
+					echo eo_get_the_start('g:ia');
+					echo ' - ';
+					echo eo_get_the_end('g:ia');
+				}
 			}
 			?>
 		</div><!-- .entry-meta -->

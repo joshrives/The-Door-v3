@@ -42,6 +42,9 @@ p {
 	@include bp(50) {
 		line-height: 2.5;
 	}
+	.btn {
+		margin-right: 1em;
+	}
 }
 .btn,
 .gform_button {
@@ -92,6 +95,9 @@ h2 {
 h3 {
 	font-family: 'Libre Baskerville', Georgia, serif;
 	font-style: italic;
+}
+h4 {
+	font-size: 1.15em;
 }
 .icon {
 	display: inline-block;

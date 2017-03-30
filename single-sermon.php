@@ -7,7 +7,7 @@
  * @package The_Door_v3
  */
 
-get_header('blog'); ?>
+get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<?php get_template_part( 'template-parts/content', 'header' ); ?>
@@ -15,7 +15,7 @@ get_header('blog'); ?>
 			<div class="blog-main">
 			<?php
 			while ( have_posts() ) : the_post();
-		
+
 				get_template_part( 'template-parts/content', 'blog-single' );
 
 				//the_post_navigation();

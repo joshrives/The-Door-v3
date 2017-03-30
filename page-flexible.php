@@ -61,9 +61,12 @@ get_header(); ?>
 				<div class="excerpt-overlay">
 					<header>
 						<?php the_sub_field('content_header'); ?>
-						<a href="<?php the_sub_field('btn_url'); ?>" class="btn <?php the_sub_field('btn_color'); ?>"><?php the_sub_field('btn_text'); ?></a>
+
 					</header>
 					<?php the_sub_field('half_content'); ?>
+					<?php if(get_sub_field('btn_url')) : ?>
+					<a href="<?php the_sub_field('btn_url'); ?>" class="btn <?php the_sub_field('btn_color'); ?>"><?php the_sub_field('btn_text'); ?></a>
+					<?php endif; ?>
 				</div>
 			</div>
 			<?php elseif( get_row_layout() == 'mod_slider' ): ?>
@@ -123,7 +126,7 @@ get_header(); ?>
 				if($events):
 			?>
 			<div class="module-slider events-slider">
-				<h2><span>Upcoming Events</span></h2>
+				<!--<h2><span>Upcoming Events</span></h2>-->
 				<?php
 		            $return= '<ul class="slider">';
 	            	foreach ($events as $event):
@@ -131,8 +134,11 @@ get_header(); ?>
 							$key = array_keys($term);
 							$thisKey = $key[0];
 							$thisCat = $term[$thisKey]->slug;
-
-							$format = 'M j // g:ia';
+							if(eo_is_all_day($event->ID)) {
+								$format = 'M j';
+							} else {
+								$format = 'M j // g:ia';
+							}
 
 	                	$return .= '<li><a title="'.$event->post_title.'" href="'.get_permalink($event->ID).'">'.get_the_post_thumbnail($event).'<div class="slider-caption"><h3>'.$event->post_title.'</h3><span>'.eo_format_date($event->StartDate.' '.$event->StartTime, $format).'</span></div></a></li>';
 	            	endforeach;
@@ -238,7 +244,7 @@ get_header(); ?>
 	    <?php endwhile; ?>
 
 	<?php endif; ?>
-
+		</div>
 	</div><!-- #primary -->
 
 <?php

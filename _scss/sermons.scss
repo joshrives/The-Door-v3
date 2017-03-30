@@ -4,10 +4,41 @@
     h2 {
         font-size: 2em;
         margin: 0;
+        a {
+            color: $black;
+            text-decoration: none;
+        }
+    }
+    p {
+        margin: 0 0 1em;
+    }
+    .powerpress_player {
+        display: none;
     }
     .powerpress_links {
         margin-top: 1rem;
         font-size: 0;
+        a {
+            font-size: 0.875rem;
+            &:first-of-type {
+                @include button($teal, #fff, $teal);
+                margin-right: 1em;
+            }
+            &:last-of-type {
+                @include button(#fff, $teal, $teal);
+            }
+        }
+    }
+}
+.single .sermon {
+    .powerpress_player {
+        display: none;
+    }
+    .powerpress_links {
+        margin-top: 1rem;
+        font-size: 0;
+        max-width: none;
+        text-align: center;
         a {
             font-size: 0.875rem;
             &:first-of-type {

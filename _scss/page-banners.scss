@@ -57,6 +57,10 @@
 	}
     h1 {
         margin: 0;
+		font-size: 1.75em;
+		@include bp(44) {
+			font-size: 2.25em;
+		}
     }
     h2 {
         font-size: 2em;

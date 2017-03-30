@@ -1,5 +1,5 @@
 function fitVids() {
-	$(".fitvids").fitVids();
+	jQuery(".fitvids").fitVids();
 }
 function showVideo() {
 	var beginEmbed = '<div class="fitvids"><iframe src="//player.vimeo.com/video/'

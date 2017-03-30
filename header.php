@@ -16,10 +16,20 @@
 		$GLOBALS['image'] = get_field('page_image');
 		$GLOBALS['banner_type'] = get_field('banner_color');
 	}
-	if(is_tax('sermon-type') || is_tax('event-category')) {
+	if( is_tax('sermon-type') || is_tax('event-category')) {
 		$queried_object = get_queried_object();
 		$taxonomy = $queried_object->taxonomy;
 		$term_id = $queried_object->term_id;
+
+		// load thumbnail for this taxonomy term (term string)
+		$GLOBALS['image'] = get_field('sermon_series_image', $taxonomy . '_' . $term_id);
+		$GLOBALS['banner_type'] = get_field('header_color', $taxonomy . '_' . $term_id);
+	}
+	if(is_singular('sermon')) {
+		$queried_object = get_queried_object();
+		$terms = get_the_terms($queried_object->ID, 'sermon-type');
+		$taxonomy = $terms[0]->taxonomy;
+		$term_id = $terms[0]->term_taxonomy_id;
 
 		// load thumbnail for this taxonomy term (term string)
 		$GLOBALS['image'] = get_field('sermon_series_image', $taxonomy . '_' . $term_id);

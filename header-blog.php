@@ -27,7 +27,7 @@
 	<div class="header-container blog-single-header" style="background-image: url('<?php echo $thumbnail; ?>');">
 		<div class="single-blog-tagline">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<p><?php the_field('post_author'); ?></p>
+			<p><?php the_author(); ?></p>
 		</div><!-- .site-tagline -->
 		<div class="wrap">
 			<?php $thumbnail = get_the_post_thumbnail_url(); ?>

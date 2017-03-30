@@ -244,3 +244,19 @@ hr {
 .module-generic {
 	padding: 4em 0;
 }
+.gform_wrapper {
+	* {
+		font-family: 'Oswald', sans-serif;
+	}
+	.gform_body {
+		input[type=text],
+		input[type=email] {
+			border-top: 0;
+			border-right: 0;
+			border-left: 0;
+		}
+	}
+	label {
+		letter-spacing: 1px;
+	}
+}

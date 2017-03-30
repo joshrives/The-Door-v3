@@ -812,6 +812,12 @@
 		"oAP": "\/single-event.php",
 		"oF": 0
 		},
+	"\/single-sermon.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/single-sermon.php",
+		"oF": 0
+		},
 	"\/single.php": {
 		"ft": 8192,
 		"oA": 2,
